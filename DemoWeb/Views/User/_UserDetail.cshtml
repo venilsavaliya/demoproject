@@ -1,0 +1,91 @@
+@* @model DemoWeb.DAL.ViewModels.UserListPaginationViewModel *@
+@model List<DemoWeb.DAL.ViewModels.UserDetailViewModel>
+
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">surname</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td scope="row">@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Surname</td>
+                <td>
+                    <div class="d-flex justify-content-center gap-3">
+                        <span>
+                            <i class="bi bi-pencil-square" id="EditUserButton" data-id="@i.Id"></i>
+                        </span>
+
+                        <span>
+                            <i class="bi bi-trash3" id="DeleteUserButton" data-id="@i.Id"></i>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@* <div class="pagination-section d-flex justify-content-end align-items-center gap-2 overflow-auto w-100">
+    <div class="d-flex justify-content-md-end align-items-center gap-2 w-100">
+        <div>Items per page: </div>
+        <select class="form-select" style="width:68px ;" aria-label="Default select example"
+            id="pageSizeDropdown" onchange="UserListPaginationAjax(this.value,1)">
+
+            <option value=2 selected="@(Model.Page.PageSize == 2 ? true : false)">2</option>
+            <option value=5 selected="@(Model.Page.PageSize == 5 ? true : false)">5</option>
+            <option value=10 selected="@(Model.Page.PageSize == 10 ? true : false)">10</option>
+        </select>
+        <div>Showing @Model.Page.FromRec - @Model.Page.ToRec of @Model.Page.TotalRecord</div>
+    
+
+        <div onclick="UserListPaginationAjax(@Model.Page.PageSize,@Model.Page.CurrentPage-1)"
+            class="text-black @( Model.Page.CurrentPage > 1? " " : "disabled-button")" style="text-decoration: none;">
+            <div class="border p-2 px-3"> &lt; </div>
+        </div>
+
+
+        <div onclick="UserListPaginationAjax(@Model.Page.PageSize, @Model.Page.CurrentPage+1)"
+            class="text-black  @(Model.Page.CurrentPage < Model.Page.TotalPages ? " " : "disabled-button")"
+            style="text-decoration: none;">
+            <div class="border p-2 px-3">&gt;</div>
+        </div>
+
+    </div>
+</div> *@
+
+@* <script>
+    function UserListPaginationAjax(pageNumber,sortColumn,sortOrder) {
+
+    pagesize=$("#pageSizeDropdown").val()
+
+    let searchkeyword = $("#user-search-field").val();
+
+        $.ajax({
+            url: "/User/UserListPV",
+            data: { 'pageSize': pageSize, 'pageNumber': pageNumber,'searchKeyword':searchkeyword,'sortColumn':sortColumn,'sortOrder':sortOrder},
+            type: "GET",
+            dataType: "html",
+            success: function (data) {
+                $("#user_list_section").html(data);
+                @* onPartialViewLoaded();  *@
+            @* },
+            error: function () {
+                $("#user_list_section").html('An error has occurred');
+            }
+        });
+    }
+
+     document.getElementById("user-search-field").addEventListener('keyup',()=>{ 
+        UserListPaginationAjax();
+    })
+</script> *@

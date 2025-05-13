@@ -1,0 +1,109 @@
+<div class="d-flex w-full justify-content-center gap-2">
+    <button type="button" class="btn btn-primary" id="GetUserDetailButton">Get User Detail</button>
+    <button type="button" class="btn btn-primary" id="AddUserButton">Add User</button>
+</div>
+
+<div id="UserDetailContainer">
+
+</div>
+
+<div class="modal fade" id="AddEditUserModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="AddEditUserModalContent">
+
+            hello
+
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+
+    function GetUserList() {
+        $.ajax({
+            url: '/User/GetUserDetailPV',
+            type: 'GET',
+            success: function (response) {
+                $("#UserDetailContainer").html(response);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error:', error);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+        $(document).on('click', "#GetUserDetailButton", function () {
+            GetUserList();
+        })
+
+        $(document).on('click', "#EditUserButton, #AddUserButton", function () {
+            $("#AddEditUserModal").modal('show');
+
+            let id = parseInt($(this).data('id'));
+
+            $.ajax({
+                url: '/User/GetAddEditUserForm',
+                type: 'GET',
+                data: { Id: id },
+                success: function (response) {
+
+                    $("#AddEditUserModalContent").html(response);
+
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        })
+
+        $(document).on('submit', '#AddEditUserForm', function (e) {
+            e.preventDefault();
+
+            let form = $(this);
+
+            let formdata = new FormData(form[0]);
+
+            console.log(formdata);
+
+            $.ajax({
+                url: '/User/AddEditUser',
+                type: 'POST',
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    toastr.success(response.message);
+
+                    $("#AddEditUserModal").modal('hide');
+
+                    GetUserList();
+
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        })
+
+        $(document).on('click', '#DeleteUserButton', function (e) {
+
+            let id = parseInt($(this).data('id'));
+
+            $.ajax({
+                url: '/User/DeleteUser',
+                type: 'GET',
+                data: { Id: id },
+                success: function (response) {
+                    toastr.success(response.message);
+                    GetUserList();
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error:', error);
+                }
+            });
+        })
+    })
+</script>

@@ -1,0 +1,15 @@
+D:\Demo3Tier\DemoWeb.BLL\bin\Debug\net7.0\DemoWeb.BLL.deps.json
+D:\Demo3Tier\DemoWeb.BLL\bin\Debug\net7.0\DemoWeb.BLL.dll
+D:\Demo3Tier\DemoWeb.BLL\bin\Debug\net7.0\DemoWeb.BLL.pdb
+D:\Demo3Tier\DemoWeb.BLL\bin\Debug\net7.0\DemoWeb.DAL.dll
+D:\Demo3Tier\DemoWeb.BLL\bin\Debug\net7.0\DemoWeb.DAL.pdb
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.csproj.AssemblyReference.cache
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.AssemblyInfoInputs.cache
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.AssemblyInfo.cs
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.csproj.CoreCompileInputs.cache
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.csproj.CopyComplete
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.dll
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\refint\DemoWeb.BLL.dll
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\DemoWeb.BLL.pdb
+D:\Demo3Tier\DemoWeb.BLL\obj\Debug\net7.0\ref\DemoWeb.BLL.dll
