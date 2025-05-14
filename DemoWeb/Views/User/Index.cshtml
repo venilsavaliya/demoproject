@@ -3,6 +3,10 @@
     <button type="button" class="btn btn-primary" id="AddUserButton">Add User</button>
 </div>
 
+<div>
+    <input type="text" id="UserSeachField">
+</div>
+
 <div id="UserDetailContainer">
 
 </div>
@@ -11,7 +15,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" id="AddEditUserModalContent">
 
-            hello
+
 
         </div>
     </div>
@@ -33,7 +37,45 @@
         });
     }
 
+    function UserListPaginationAjax(pageNumber, ele) {
+
+        let pageSize = $("#pageSizeDropdown").val()
+
+        let searchkeyword = $("#UserSeachField").val();
+
+        let sortColumn = "";
+
+        let sortOrder = "";
+
+        if ($(ele).hasClass("sortArrow")) {
+
+            sortColumn = $(ele).closest('th').data('colname');
+
+            sortOrder = $(ele).data('sortorder');
+        }
+
+        $.ajax({
+            url: "/User/GetPaginatedUserList",
+            data: { 'pageSize': pageSize, 'pageNumber': pageNumber, 'searchKeyword': searchkeyword, 'sortColumn': sortColumn, 'sortOrder': sortOrder },
+            type: "GET",
+            dataType: "html",
+            success: function (data) {
+                $("#UserDetailContainer").html(data);
+
+            },
+            error: function () {
+                $("#UserDetailContainer").html('An error has occurred');
+            }
+        });
+    }
+
+    document.getElementById("UserSeachField").addEventListener('keyup', () => {
+        UserListPaginationAjax();
+    })
+
     $(document).ready(function () {
+
+        UserListPaginationAjax();
 
         $(document).on('click', "#GetUserDetailButton", function () {
             GetUserList();
@@ -63,6 +105,12 @@
             e.preventDefault();
 
             let form = $(this);
+
+            console.log("form validation",form.valid());
+
+            if (!form.valid()) {
+                return;
+            }
 
             let formdata = new FormData(form[0]);
 

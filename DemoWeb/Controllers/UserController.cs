@@ -29,6 +29,13 @@ public class UserController : Controller
 
         return PartialView("_UserDetail",data);
     }
+
+    public IActionResult GetPaginatedUserList(string sortColumn, string sortOrder, int pageNumber = 1, int pageSize = 2, string searchKeyword = "")
+    {   
+        UserListPaginationViewModel data = _userService.GetPaginatedUserList(sortColumn,sortOrder,pageNumber,pageSize,searchKeyword);
+
+        return PartialView("_UserDetail",data);
+    }
     public async Task<IActionResult> GetAddEditUserForm(int Id)
     {   
         UserDetailViewModel data = await _userService.GetUserDetailById(Id);

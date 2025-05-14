@@ -817,7 +817,10 @@
           "DemoWeb.DAL": "1.0.0"
         },
         "runtime": {
-          "DemoWeb.BLL.dll": {}
+          "DemoWeb.BLL.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "DemoWeb.DAL/1.0.0": {
@@ -826,7 +829,10 @@
           "Npgsql.EntityFrameworkCore.PostgreSQL.Design": "1.1.0"
         },
         "runtime": {
-          "DemoWeb.DAL.dll": {}
+          "DemoWeb.DAL.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
