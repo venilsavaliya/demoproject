@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Demo3Tier\\DemoWeb.DAL\\DemoWeb.DAL.csproj": {}
+    "/Users/venil/Code/Demo/demoproject/DemoWeb.DAL/DemoWeb.DAL.csproj": {}
   },
   "projects": {
-    "D:\\Demo3Tier\\DemoWeb.DAL\\DemoWeb.DAL.csproj": {
+    "/Users/venil/Code/Demo/demoproject/DemoWeb.DAL/DemoWeb.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Demo3Tier\\DemoWeb.DAL\\DemoWeb.DAL.csproj",
+        "projectUniqueName": "/Users/venil/Code/Demo/demoproject/DemoWeb.DAL/DemoWeb.DAL.csproj",
         "projectName": "DemoWeb.DAL",
-        "projectPath": "D:\\Demo3Tier\\DemoWeb.DAL\\DemoWeb.DAL.csproj",
-        "packagesPath": "C:\\Users\\pce175\\.nuget\\packages\\",
-        "outputPath": "D:\\Demo3Tier\\DemoWeb.DAL\\obj\\",
+        "projectPath": "/Users/venil/Code/Demo/demoproject/DemoWeb.DAL/DemoWeb.DAL.csproj",
+        "packagesPath": "/Users/venil/.nuget/packages/",
+        "outputPath": "/Users/venil/Code/Demo/demoproject/DemoWeb.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pce175\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/venil/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -75,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }
